@@ -38,6 +38,42 @@ class AppColor {
 
 
 
+  /// auth colors
+
+  static Color get primaryBlack => const Color(0xFF080808);
+
+  static Color get secondaryBlack => const Color(0xFF272727);
+
+  static Color get cardBlack => const Color(0xFF161616);
+
+  static Color get splashLogoBg => const Color(0xFF1B1B1A);
+
+  static Color get splashOuterCircleDark1 => const Color(0xAE0DFDB);
+
+  static Color get splashOuterCircleDark2 => const Color(0xDE0DFDB);
+
+  static Color get splashOuterCircleDark3 => const Color(0x12FFFFFF);
+
+  static Color get bottomNavTextDark => const Color(0x66FDFDFF);
+
+  static Color get homeCardTitleDark => const Color(0xB3E1E5F1);
+
+  static Color get descripTextDark => const Color(0x73FFFFFF);
+
+  static Color get cardStrokeWhite => const Color(0xFFF3F2EE);
+
+  static Color get buttonWhite => const Color(0xFFF3F2EE);
+
+  static Color get cardStrokeRed => const Color(0xFFF97066);
+
+  static Color get whiteText => const Color(0xFFF4F4F4);
+
+  static Color get colorGrey => const Color(0xFF6A6A6B);
+
+
+
+
+
 
 }
 
