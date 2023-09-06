@@ -1,11 +1,16 @@
+import 'dart:async';
+
 import 'package:get/get.dart';
+
+import '../../../data/preference_data/local_preference.dart';
+import '../../../routes/app_pages.dart';
 
 class SplashController extends GetxController {
   //TODO: Implement SplashController
 
-  final count = 0.obs;
   @override
   void onInit() {
+    getRoute();
     super.onInit();
   }
 
@@ -19,5 +24,18 @@ class SplashController extends GetxController {
     super.onClose();
   }
 
-  void increment() => count.value++;
+  RxString appName = "Mocdt Authenticator".obs;
+
+  LocalPreferences localPreferences = Get.find<LocalPreferences>();
+
+  getRoute() {
+    Timer(const Duration(seconds: 3), (){
+      if(localPreferences.token.val.length>5){
+        Get.offAllNamed(AppPages.HOME);
+      }else{
+        Get.offAllNamed(AppPages.HOME);
+      }
+    });
+  }
+
 }

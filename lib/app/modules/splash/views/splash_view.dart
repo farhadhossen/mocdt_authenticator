@@ -87,7 +87,7 @@ class SplashView extends GetView<SplashController> {
             SizedBox(height: AppSize.s20,),
 
 
-            Text("Mocdt Authenticator", style: GoogleFonts.poppins(
+            Text("${controller.appName.value}", style: GoogleFonts.poppins(
               fontSize: AppSize.textLarge, color: AppColor.whiteText, fontWeight: FontWeight.w600
             )),
 
