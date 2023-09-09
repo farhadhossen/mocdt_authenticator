@@ -70,6 +70,8 @@ class AppColor {
 
   static Color get colorGrey => const Color(0xFF6A6A6B);
 
+  static Color get appBarStock => const Color(0xFF1E1E1E);
+
 
 
 
