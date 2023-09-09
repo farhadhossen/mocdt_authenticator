@@ -23,11 +23,29 @@ class HomeView extends GetView<HomeController> {
       //   elevation: AppSize.s8,
       //     shadowColor: AppColor.cardStrokeWhite
       // ),
-      body: const Center(
-        child: Text(
-          'HomeView is working',
-          style: TextStyle(fontSize: 20),
-        ),
+      body: Column(
+        children: [
+          Container(
+            padding: EdgeInsets.all(AppSize.s20),
+            child: Column(
+              children: [
+                TextFormField(
+                  decoration: InputDecoration(
+                    hintText: 'Search',
+                    prefixIcon: Icon(Icons.search, color: AppColor.bottomNavTextDark,),
+                    hintStyle: TextStyle(color: AppColor.bottomNavTextDark),
+                    filled: true,
+                    fillColor: AppColor.cardBlack,
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(
+                          width: 3, color: AppColor.bottomNavTextDark),
+                    ),
+                  ),
+                )
+              ],
+            ),
+          )
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: (){
