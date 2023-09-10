@@ -3,6 +3,7 @@ import 'package:authenticator/app/utils/app_assets.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:gradient_circular_progress_indicator/gradient_circular_progress_indicator.dart';
 
 import '../../../data/services/theme_services.dart';
 import '../../../widgets/custom_app_bar.dart';
@@ -92,13 +93,23 @@ class HomeView extends GetView<HomeController> {
                               ),
                             ),
 
-                            SizedBox(
-                              height: AppSize.s42,
-                              width: AppSize.s42,
-                              child: FittedBox(
-                                fit: BoxFit.fill,
-                                child: Image.asset(AppAssets.timerIc),
+
+                            GradientCircularProgressIndicator(
+                              progress: 0.75, // Specify the progress value between 0 and 1
+                              gradient: const LinearGradient(
+                                colors: [
+                                  Color(0xFFD59FFF),
+                                  Color(0xFF75D7F5),
+                                  Color(0xFF5093FF),
+                                ],
+                                begin: Alignment.bottomLeft,
+                                end: Alignment.topRight,
                               ),
+                              backgroundColor: Colors.grey, // Specify the background color
+                              child: Padding(
+                                padding: EdgeInsets.all(AppSize.s8),
+                                child: Text('49'),
+                              ), // Optional child widget
                             ),
 
                             Icon(Icons.play_arrow_rounded, color: AppColor.iconBlue,)
@@ -115,11 +126,22 @@ class HomeView extends GetView<HomeController> {
           )
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: (){
+      floatingActionButton: InkWell(
+        onTap: (){
           ThemeService().changeThemeMode();
         },
-        child: const Icon(Icons.nightlight),
+        child: Card(
+          clipBehavior: Clip.hardEdge,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(AppSize.s6)
+          ),
+            child: Container(
+              color: AppColor.colorWhite,
+              height: AppSize.s42,
+              width: AppSize.s42,
+              padding: const EdgeInsets.all(8.0),
+              child: Icon(Icons.add, color: AppColor.primaryBlack, size: AppSize.s26,),
+            )),
       ),
     );
   }
