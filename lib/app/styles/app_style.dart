@@ -73,6 +73,9 @@ class AppColor {
   static Color get appBarStock => const Color(0xFF1E1E1E);
 
 
+  static Color get iconBlue => const Color(0xFF287BFF);
+
+
 
 
 
