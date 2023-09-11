@@ -31,9 +31,9 @@ class SplashController extends GetxController {
   getRoute() {
     Timer(const Duration(seconds: 3), (){
       if(localPreferences.token.val.length>5){
-        Get.offAllNamed(AppPages.HOME);
+        Get.offAllNamed(AppPages.BASE);
       }else{
-        Get.offAllNamed(AppPages.HOME);
+        Get.offAllNamed(AppPages.BASE);
       }
     });
   }
