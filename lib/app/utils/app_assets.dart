@@ -14,6 +14,7 @@ class AppAssets{
   static String get icA => "assets/icons/ic-a.png";
   static String get gmailIc => "assets/icons/gmail_ic.png";
   static String get timerIc => "assets/icons/timer.png";
+  static String get fbIc => "assets/icons/fb_ic.png";
 
 
 
