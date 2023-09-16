@@ -10,12 +10,12 @@ class AddAccQrView extends GetView<AddAccountController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('AddAccountView'),
+        title: const Text('Scan QR'),
         centerTitle: true,
       ),
       body: const Center(
         child: Text(
-          'AddAccountView is working',
+          'Scan QR onGoing',
           style: TextStyle(fontSize: 20),
         ),
       ),

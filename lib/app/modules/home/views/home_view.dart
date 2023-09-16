@@ -1,3 +1,4 @@
+import 'package:authenticator/app/routes/app_pages.dart';
 import 'package:authenticator/app/styles/app_style.dart';
 import 'package:authenticator/app/utils/app_assets.dart';
 import 'package:flutter/material.dart';
@@ -128,7 +129,8 @@ class HomeView extends GetView<HomeController> {
       ),
       floatingActionButton: InkWell(
         onTap: (){
-          ThemeService().changeThemeMode();
+          // ThemeService().changeThemeMode();
+          Get.toNamed(AppPages.ADD_ACCOUNT);
         },
         child: Card(
           clipBehavior: Clip.hardEdge,
