@@ -20,6 +20,7 @@ class ThemeService{
   }
 
   void saveThemeMode(bool isDarkMode) {
+    localPreferences.isNight.val = isDarkMode;
     _getStorage.write(storageKey, isDarkMode);
   }
 

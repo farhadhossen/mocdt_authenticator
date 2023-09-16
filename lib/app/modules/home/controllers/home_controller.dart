@@ -1,3 +1,4 @@
+import 'package:authenticator/app/data/preference_data/local_preference.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
@@ -11,6 +12,7 @@ class HomeController extends GetxController {
 
   @override
   void onInit() {
+    isNight.value = localPreferences.isNight.val;
     super.onInit();
   }
 
@@ -24,6 +26,7 @@ class HomeController extends GetxController {
     super.onClose();
   }
 
+  LocalPreferences localPreferences = Get.find<LocalPreferences>();
 
   RxInt currentTab = 0.obs;
 
@@ -42,6 +45,8 @@ class HomeController extends GetxController {
     currentScreen = screens[index];
     // onLogout();
   }
+
+  RxBool isNight = true.obs;
 
 
 }

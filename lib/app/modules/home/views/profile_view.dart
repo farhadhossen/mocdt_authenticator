@@ -3,6 +3,7 @@ import 'package:authenticator/app/utils/app_assets.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:gradient_circular_progress_indicator/gradient_circular_progress_indicator.dart';
 
 import '../../../data/services/theme_services.dart';
@@ -17,7 +18,7 @@ class ProfileView extends GetView<HomeController> {
     return Scaffold(
       // backgroundColor: Get.theme.colorScheme.background,
       backgroundColor: context.theme.colorScheme.background,
-      appBar: CustomAppBar(title: "Authenticator",),
+      appBar: const CustomAppBar(title: "Authenticator",),
       // AppBar(
       //   backgroundColor: AppColor.primaryBlack,
       //   title: Text('Authenticator', style: TextStyle(color: AppColor.cardStrokeWhite),),
@@ -25,124 +26,224 @@ class ProfileView extends GetView<HomeController> {
       //   elevation: AppSize.s8,
       //     shadowColor: AppColor.cardStrokeWhite
       // ),
-      body: Column(
-        children: [
-          Expanded(
-            child: Container(
-              padding: EdgeInsets.all(AppSize.s20),
+      body: Padding(
+        padding: EdgeInsets.all(AppSize.s10),
+        child: Column(
+          children: [
+            Container(
+              
+              decoration: BoxDecoration(
+                // color: AppColor.whiteText,
+                borderRadius: BorderRadius.circular(AppSize.s10,),
+                border: Border.all(color: AppColor.cardStrokeWhite.withOpacity(0.2), width: 0.8)
+              ),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  TextFormField(
-                    decoration: InputDecoration(
-                      contentPadding: EdgeInsets.all(AppSize.s2),
-                      hintText: 'Search Accounts',
-                      prefixIcon: Icon(Icons.search, color: AppColor.bottomNavTextDark,),
-                      hintStyle: TextStyle(color: AppColor.bottomNavTextDark),
-                      filled: true,
-                      fillColor: AppColor.cardBlack,
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: const BorderSide(
-                          width: 0,
-                          style: BorderStyle.none,
-                        ),
-                      ),
+                  SizedBox(width: double.infinity,),
+                  Container(
+                    padding: EdgeInsets.all(AppSize.s10),
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: AppColor.colorWhite,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(AppSize.s10),
+                        topRight: Radius.circular(AppSize.s10),
+                      )
                     ),
+                    child: Text("Authenticator Backup Key", style: GoogleFonts.inter(textStyle: TextStyle(
+                      fontSize: AppSize.textSmall,
+                      color: AppColor.primaryAppColor
+                    )),),
                   ),
-
-                  SizedBox(height: AppSize.s20,),
-
-                  Expanded(
-                    child: ListView.builder(
-                      physics: const BouncingScrollPhysics(),
-                      itemCount: 10,
-                        itemBuilder: (ctx, index){
-                      return Container(
-                        padding: EdgeInsets.all(AppSize.s10),
-                        margin: EdgeInsets.symmetric(vertical: AppSize.s8),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(AppSize.s10),
-                          color: AppColor.cardBlack
-                        ),
-                        child: Row(
-                          children: [
-                            Container(
-                              height: AppSize.s50,
-                              width: AppSize.s36,
-                              decoration: BoxDecoration(
-                                color: AppColor.primaryBlack,
-                                borderRadius: BorderRadius.circular(AppSize.s6)
-                              ),
-                              padding: EdgeInsets.symmetric(horizontal: AppSize.s6),
-                              child: FittedBox(
-                                fit: BoxFit.contain,
-                                child: Image.asset(AppAssets.gmailIc),
-                              ),
-                            ),
-                            SizedBox(width: AppSize.s10,),
-                            Expanded(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text("Gmail", style: TextStyle(color: AppColor.homeCardTitleDark, fontSize: AppSize.textXSmall),),
-                                  Text("759 854", style: TextStyle(color: AppColor.homeCardTitleDark, fontSize: AppSize.textXLarge),),
-                                  Text("imfarhad01@gmail.com", style: TextStyle(color: AppColor.homeCardTitleDark, fontSize: AppSize.textXSmall),),
-
-                                ],
-                              ),
-                            ),
-
-
-                            GradientCircularProgressIndicator(
-                              progress: 0.75, // Specify the progress value between 0 and 1
-                              gradient: const LinearGradient(
-                                colors: [
-                                  Color(0xFFD59FFF),
-                                  Color(0xFF75D7F5),
-                                  Color(0xFF5093FF),
-                                ],
-                                begin: Alignment.bottomLeft,
-                                end: Alignment.topRight,
-                              ),
-                              backgroundColor: Colors.grey, // Specify the background color
-                              child: Padding(
-                                padding: EdgeInsets.all(AppSize.s8),
-                                child: Text('49'),
-                              ), // Optional child widget
-                            ),
-
-                            Icon(Icons.play_arrow_rounded, color: AppColor.iconBlue,)
-
-                          ],
-                        ),
-                      );
-                    }),
+                  Container(
+                    padding: EdgeInsets.all(AppSize.s10),
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                        color: AppColor.appBarStock,
+                        borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(AppSize.s10),
+                          bottomRight: Radius.circular(AppSize.s10),
+                        )
+                    ),
+                    child: Column(
+                      children: [
+                        Text("Authenticator BaIt’s important to preserve your backup keys. You can get the tokens if you want to use these account further.", style: GoogleFonts.inter(textStyle: TextStyle(
+                            fontSize: AppSize.textSmall,
+                            color: AppColor.cardStrokeWhite
+                        )),),
+                        
+                        SizedBox(height: AppSize.s20,),
+                        
+                        Container(
+                          width: double.infinity,
+                          height: AppSize.s42,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(AppSize.s10),
+                            border: Border.all(color: AppColor.cardStrokeWhite)
+                          ),
+                          child: Center(
+                            child: Text("Copy Backup Key", style: TextStyle(
+                              fontSize: AppSize.textSmall, color: AppColor.cardStrokeWhite
+                            ),),
+                          ),
+                        )
+                      ],
+                    ),
                   )
-
                 ],
               ),
             ),
-          )
-        ],
+
+            SizedBox(height: AppSize.s10,),
+
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(AppSize.s8),
+              margin: EdgeInsets.all(AppSize.s4),
+              decoration: BoxDecoration(
+                // color: AppColor.whiteText,
+                  borderRadius: BorderRadius.circular(AppSize.s10,),
+                  border: Border.all(color: AppColor.cardStrokeWhite.withOpacity(0.2), width: 0.8)
+              ),
+              child: Row(
+                children: [
+                  Container(
+                    height: AppSize.s36,
+                    width: AppSize.s36,
+                    decoration: BoxDecoration(
+                      color: AppColor.cardStrokeWhite,
+                      borderRadius: BorderRadius.circular(AppSize.s6)
+                    ),
+                    child: Icon(Icons.nightlight_round, color: AppColor.primaryBlack,),
+                  ),
+                  SizedBox(width: AppSize.s6,),
+                  Expanded(child: Text("Dark Mode", style: TextStyle(fontSize: AppSize.textSmall),)),
+                  Switch(
+                      value: controller.isNight.value, onChanged: (value){
+                    ThemeService().changeThemeMode();
+                    controller.isNight.value = value;
+                  }
+                  )
+                ],
+              ),
+            ),
+
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(AppSize.s8),
+              margin: EdgeInsets.all(AppSize.s4),
+              decoration: BoxDecoration(
+                // color: AppColor.whiteText,
+                  borderRadius: BorderRadius.circular(AppSize.s10,),
+                  border: Border.all(color: AppColor.cardStrokeWhite.withOpacity(0.2), width: 0.8)
+              ),
+              child: Row(
+                children: [
+                  Container(
+                    height: AppSize.s36,
+                    width: AppSize.s36,
+                    decoration: BoxDecoration(
+                      color: AppColor.cardStrokeWhite,
+                      borderRadius: BorderRadius.circular(AppSize.s6)
+                    ),
+                    child: Icon(Icons.lock, color: AppColor.primaryBlack,),
+                  ),
+                  SizedBox(width: AppSize.s6,),
+                  Expanded(child: Text("App Security", style: TextStyle(fontSize: AppSize.textSmall),)),
+                  Icon(Icons.play_arrow_rounded, color: AppColor.colorGrey,)
+                ],
+              ),
+            ),
+
+
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(AppSize.s8),
+              margin: EdgeInsets.all(AppSize.s4),
+              decoration: BoxDecoration(
+                // color: AppColor.whiteText,
+                  borderRadius: BorderRadius.circular(AppSize.s10,),
+                  border: Border.all(color: AppColor.cardStrokeWhite.withOpacity(0.2), width: 0.8)
+              ),
+              child: Row(
+                children: [
+                  Container(
+                    height: AppSize.s36,
+                    width: AppSize.s36,
+                    decoration: BoxDecoration(
+                        color: AppColor.cardStrokeWhite,
+                        borderRadius: BorderRadius.circular(AppSize.s6)
+                    ),
+                    child: Icon(Icons.login_outlined, color: AppColor.primaryBlack,),
+                  ),
+                  SizedBox(width: AppSize.s6,),
+                  Expanded(child: Text("Import/Export Tokens", style: TextStyle(fontSize: AppSize.textSmall),)),
+                  Icon(Icons.play_arrow_rounded, color: AppColor.colorGrey,)
+                ],
+              ),
+            ),
+
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(AppSize.s8),
+              margin: EdgeInsets.all(AppSize.s4),
+              decoration: BoxDecoration(
+                // color: AppColor.whiteText,
+                  borderRadius: BorderRadius.circular(AppSize.s10,),
+                  border: Border.all(color: AppColor.cardStrokeWhite.withOpacity(0.2), width: 0.8)
+              ),
+              child: Row(
+                children: [
+                  Container(
+                    height: AppSize.s36,
+                    width: AppSize.s36,
+                    decoration: BoxDecoration(
+                        color: AppColor.cardStrokeWhite,
+                        borderRadius: BorderRadius.circular(AppSize.s6)
+                    ),
+                    child: Icon(Icons.support_agent, color: AppColor.primaryBlack,),
+                  ),
+                  SizedBox(width: AppSize.s6,),
+                  Expanded(child: Text("Support", style: TextStyle(fontSize: AppSize.textSmall),)),
+                  Icon(Icons.outbond, color: AppColor.colorGrey,)
+                ],
+              ),
+            ),
+
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(AppSize.s8),
+              margin: EdgeInsets.all(AppSize.s4),
+              decoration: BoxDecoration(
+                // color: AppColor.whiteText,
+                  borderRadius: BorderRadius.circular(AppSize.s10,),
+                  border: Border.all(color: AppColor.cardStrokeWhite.withOpacity(0.2), width: 0.8)
+              ),
+              child: Row(
+                children: [
+                  Container(
+                    height: AppSize.s36,
+                    width: AppSize.s36,
+                    decoration: BoxDecoration(
+                        color: AppColor.cardStrokeWhite,
+                        borderRadius: BorderRadius.circular(AppSize.s6)
+                    ),
+                    child: Icon(Icons.info, color: AppColor.primaryBlack,),
+                  ),
+                  SizedBox(width: AppSize.s6,),
+                  Expanded(child: Text("About", style: TextStyle(fontSize: AppSize.textSmall),)),
+                  Icon(Icons.outbond, color: AppColor.colorGrey,)
+                ],
+              ),
+            ),
+
+
+          ],
+        ),
       ),
-      floatingActionButton: InkWell(
-        onTap: (){
-          ThemeService().changeThemeMode();
-        },
-        child: Card(
-          clipBehavior: Clip.hardEdge,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(AppSize.s6)
-          ),
-            child: Container(
-              color: AppColor.colorWhite,
-              height: AppSize.s42,
-              width: AppSize.s42,
-              padding: const EdgeInsets.all(8.0),
-              child: Icon(Icons.add, color: AppColor.primaryBlack, size: AppSize.s26,),
-            )),
-      ),
+
     );
   }
 }

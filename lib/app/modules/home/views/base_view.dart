@@ -108,7 +108,7 @@ class BaseView extends GetView<HomeController> {
                                     ),
                                     child: Icon(Icons.security, color: controller.currentTab.value == 0? AppColor.whiteText:AppColor.colorGrey,)),
                                 SizedBox(height: AppSize.s6,),
-                                Text("Token", style: TextStyle(color: controller.currentTab.value == 0? AppColor.whiteText:AppColor.colorGrey,),)
+                                Text("Tokens", style: TextStyle(color: controller.currentTab.value == 0? AppColor.whiteText:AppColor.colorGrey,),)
                               ],
                             ),
                           ),
