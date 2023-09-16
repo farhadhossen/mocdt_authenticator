@@ -8,6 +8,9 @@ abstract class Routes {
   static const BASE = _Paths.BASE;
   static const NOTIFICATION = _Paths.NOTIFICATION;
   static const PROFILE = _Paths.PROFILE;
+  static const ADD_ACCOUNT = _Paths.ADD_ACCOUNT;
+  static const ADD_ACCOUNT_SEC_KEY = _Paths.ADD_ACCOUNT_SEC_KEY;
+  static const ADD_ACCOUNT_QR = _Paths.ADD_ACCOUNT_QR;
 }
 
 abstract class _Paths {
@@ -17,4 +20,7 @@ abstract class _Paths {
   static const BASE = '/base';
   static const NOTIFICATION = '/notification';
   static const PROFILE = '/profile';
+  static const ADD_ACCOUNT = '/add-account';
+  static const ADD_ACCOUNT_SEC_KEY = '/add-account-sec-key';
+  static const ADD_ACCOUNT_QR = '/add-account-qr';
 }
