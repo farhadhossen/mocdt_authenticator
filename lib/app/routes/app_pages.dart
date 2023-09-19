@@ -9,6 +9,7 @@ import '../modules/home/views/base_view.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/home/views/notification_view.dart';
 import '../modules/home/views/profile_view.dart';
+import '../modules/home/views/token_details_view.dart';
 import '../modules/splash/bindings/splash_binding.dart';
 import '../modules/splash/views/splash_view.dart';
 
@@ -25,6 +26,7 @@ class AppPages {
   static const ADD_ACCOUNT = Routes.ADD_ACCOUNT;
   static const ADD_ACCOUNT_SEC_KEY = Routes.ADD_ACCOUNT_SEC_KEY;
   static const ADD_ACCOUNT_QR = Routes.ADD_ACCOUNT_QR;
+  static const TOKEN_DETAIL = Routes.TOKEN_DETAIL;
 
   static final routes = [
     GetPage(
@@ -50,6 +52,11 @@ class AppPages {
     GetPage(
       name: _Paths.PROFILE,
       page: () => const ProfileView(),
+      binding: HomeBinding(),
+    ),
+    GetPage(
+      name: _Paths.TOKEN_DETAIL,
+      page: () => const TokenDetailsView(),
       binding: HomeBinding(),
     ),
     GetPage(

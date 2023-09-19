@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import '../../../widgets/custom_app_bar.dart';
 import '../controllers/add_account_controller.dart';
 
 class AddAccQrView extends GetView<AddAccountController> {
@@ -9,10 +10,7 @@ class AddAccQrView extends GetView<AddAccountController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Scan QR'),
-        centerTitle: true,
-      ),
+      appBar: const CustomAppBar(title: "Scan QR",),
       body: const Center(
         child: Text(
           'Scan QR onGoing',

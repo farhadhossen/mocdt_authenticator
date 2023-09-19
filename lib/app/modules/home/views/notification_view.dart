@@ -28,9 +28,10 @@ class NotificationView extends GetView<HomeController> {
       // ),
       body: Column(
         children: [
+          // SizedBox(height: AppSize.s16,),
           Expanded(
             child: Container(
-              padding: EdgeInsets.all(AppSize.s20),
+              padding: EdgeInsets.symmetric(horizontal: AppSize.s20),
               child: ListView.builder(
                 physics: const BouncingScrollPhysics(),
                 itemCount: 10,

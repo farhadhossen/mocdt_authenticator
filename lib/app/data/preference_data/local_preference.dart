@@ -17,5 +17,5 @@ class LocalPreferences extends GetxController {
 
 
   final isOnBoarding = true.val('isOnBoarding');
-  final isNight = true.val('isNight');
+  final isNight = false.val('isNight');
 }

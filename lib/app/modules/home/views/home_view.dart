@@ -17,8 +17,8 @@ class HomeView extends GetView<HomeController> {
     debugPrint("-------------------------");
     return Scaffold(
       // backgroundColor: Get.theme.colorScheme.background,
-      backgroundColor: context.theme.colorScheme.background,
-      appBar: CustomAppBar(title: "Authenticator",),
+      backgroundColor: Get.theme.colorScheme.background,
+      appBar: const CustomAppBar(title: "Authenticator",),
       // AppBar(
       //   backgroundColor: AppColor.primaryBlack,
       //   title: Text('Authenticator', style: TextStyle(color: AppColor.cardStrokeWhite),),
@@ -28,9 +28,10 @@ class HomeView extends GetView<HomeController> {
       // ),
       body: Column(
         children: [
+          SizedBox(height: AppSize.s16,),
           Expanded(
             child: Container(
-              padding: EdgeInsets.all(AppSize.s20),
+              padding: EdgeInsets.symmetric(horizontal: AppSize.s20),
               child: Column(
                 children: [
                   TextFormField(
@@ -58,64 +59,69 @@ class HomeView extends GetView<HomeController> {
                       physics: const BouncingScrollPhysics(),
                       itemCount: 10,
                         itemBuilder: (ctx, index){
-                      return Container(
-                        padding: EdgeInsets.all(AppSize.s10),
-                        margin: EdgeInsets.symmetric(vertical: AppSize.s8),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(AppSize.s10),
-                          color: AppColor.cardBlack
-                        ),
-                        child: Row(
-                          children: [
-                            Container(
-                              height: AppSize.s50,
-                              width: AppSize.s36,
-                              decoration: BoxDecoration(
-                                color: AppColor.primaryBlack,
-                                borderRadius: BorderRadius.circular(AppSize.s6)
+                      return InkWell(
+                        onTap: (){
+                          Get.toNamed(AppPages.TOKEN_DETAIL);
+                        },
+                        child: Container(
+                          padding: EdgeInsets.all(AppSize.s10),
+                          margin: EdgeInsets.symmetric(vertical: AppSize.s8),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(AppSize.s10),
+                            color: AppColor.cardBlack
+                          ),
+                          child: Row(
+                            children: [
+                              Container(
+                                height: AppSize.s50,
+                                width: AppSize.s36,
+                                decoration: BoxDecoration(
+                                  color: AppColor.primaryBlack,
+                                  borderRadius: BorderRadius.circular(AppSize.s6)
+                                ),
+                                padding: EdgeInsets.symmetric(horizontal: AppSize.s6),
+                                child: FittedBox(
+                                  fit: BoxFit.contain,
+                                  child: Image.asset(AppAssets.gmailIc),
+                                ),
                               ),
-                              padding: EdgeInsets.symmetric(horizontal: AppSize.s6),
-                              child: FittedBox(
-                                fit: BoxFit.contain,
-                                child: Image.asset(AppAssets.gmailIc),
+                              SizedBox(width: AppSize.s10,),
+                              Expanded(
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text("Gmail", style: TextStyle(color: AppColor.homeCardTitleDark, fontSize: AppSize.textXSmall),),
+                                    Text("759 854", style: TextStyle(color: AppColor.homeCardTitleDark, fontSize: AppSize.textXLarge),),
+                                    Text("imfarhad01@gmail.com", style: TextStyle(color: AppColor.homeCardTitleDark, fontSize: AppSize.textXSmall),),
+
+                                  ],
+                                ),
                               ),
-                            ),
-                            SizedBox(width: AppSize.s10,),
-                            Expanded(
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text("Gmail", style: TextStyle(color: AppColor.homeCardTitleDark, fontSize: AppSize.textXSmall),),
-                                  Text("759 854", style: TextStyle(color: AppColor.homeCardTitleDark, fontSize: AppSize.textXLarge),),
-                                  Text("imfarhad01@gmail.com", style: TextStyle(color: AppColor.homeCardTitleDark, fontSize: AppSize.textXSmall),),
 
-                                ],
+
+                              GradientCircularProgressIndicator(
+                                progress: 0.75, // Specify the progress value between 0 and 1
+                                gradient: const LinearGradient(
+                                  colors: [
+                                    Color(0xFFD59FFF),
+                                    Color(0xFF75D7F5),
+                                    Color(0xFF5093FF),
+                                  ],
+                                  begin: Alignment.bottomLeft,
+                                  end: Alignment.topRight,
+                                ),
+                                backgroundColor: Colors.grey, // Specify the background color
+                                child: Padding(
+                                  padding: EdgeInsets.all(AppSize.s8),
+                                  child: Text('49'),
+                                ), // Optional child widget
                               ),
-                            ),
 
+                              Icon(Icons.play_arrow_rounded, color: AppColor.iconBlue,)
 
-                            GradientCircularProgressIndicator(
-                              progress: 0.75, // Specify the progress value between 0 and 1
-                              gradient: const LinearGradient(
-                                colors: [
-                                  Color(0xFFD59FFF),
-                                  Color(0xFF75D7F5),
-                                  Color(0xFF5093FF),
-                                ],
-                                begin: Alignment.bottomLeft,
-                                end: Alignment.topRight,
-                              ),
-                              backgroundColor: Colors.grey, // Specify the background color
-                              child: Padding(
-                                padding: EdgeInsets.all(AppSize.s8),
-                                child: Text('49'),
-                              ), // Optional child widget
-                            ),
-
-                            Icon(Icons.play_arrow_rounded, color: AppColor.iconBlue,)
-
-                          ],
+                            ],
+                          ),
                         ),
                       );
                     }),

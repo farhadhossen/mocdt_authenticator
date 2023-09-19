@@ -1,3 +1,4 @@
+import 'package:authenticator/app/styles/app_style.dart';
 import 'package:flutter/material.dart';
 
 class Themes {
@@ -15,7 +16,7 @@ class Themes {
     colorScheme: ColorScheme.dark(
         brightness: Brightness.dark,
         primary: Color(0xff1E1E1E),
-        background: Color(0xff080808),
+        background: AppColor.primaryBlack,
         secondary: Color(0xff1E1E1E),
     )
   );

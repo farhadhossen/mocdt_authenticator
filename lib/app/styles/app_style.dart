@@ -76,6 +76,12 @@ class AppColor {
   static Color get iconBlue => const Color(0xFF287BFF);
 
 
+  static Color get semiBlack80 => const Color(0xCC010101);
+
+
+
+
+
 
 
 
