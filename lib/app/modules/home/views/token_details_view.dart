@@ -30,9 +30,15 @@ class TokenDetailsView extends GetView<HomeController> {
         children: [
           Container(
             padding: EdgeInsets.all(AppSize.s10),
-            margin: EdgeInsets.symmetric(vertical: AppSize.s8),
+            // margin: EdgeInsets.symmetric(vertical: AppSize.s8),
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(AppSize.s10),
+                // borderRadius: BorderRadius.circular(AppSize.s10),
+                  border: Border(
+                    bottom: BorderSide(
+                      color: AppColor.appBarStock,
+                      width: 1.0,
+                    ),
+                  ),
                 // color: AppColor.cardBlack
             ),
             child: Row(
@@ -66,6 +72,150 @@ class TokenDetailsView extends GetView<HomeController> {
 
 
               ],
+            ),
+          ),
+
+          Expanded(
+            child: Container(
+              padding: EdgeInsets.all(AppSize.s16),
+              child: Column(
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(AppSize.s10),
+                    margin: EdgeInsets.symmetric(vertical: AppSize.s8),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(AppSize.s10),
+                        color: AppColor.cardBlack
+                    ),
+                    child: Row(
+                      children: [
+                        GradientCircularProgressIndicator(
+                          progress: 0.75, // Specify the progress value between 0 and 1
+                          gradient: const LinearGradient(
+                            colors: [
+                              Color(0xFFD59FFF),
+                              Color(0xFF75D7F5),
+                              Color(0xFF5093FF),
+                            ],
+                            begin: Alignment.bottomLeft,
+                            end: Alignment.topRight,
+                          ),
+                          backgroundColor: Colors.grey, // Specify the background color
+                          child: Padding(
+                            padding: EdgeInsets.all(AppSize.s8),
+                            child: Text('49'),
+                          ), // Optional child widget
+                        ),
+                        SizedBox(width: AppSize.s10,),
+                        Expanded(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("One Time Passcode", style: TextStyle(color: AppColor.homeCardTitleDark, fontSize: AppSize
+                                  .textXSmall),),
+                              Text("759 854", style: TextStyle(color: AppColor.homeCardTitleDark, fontSize: AppSize.textXLarge),),
+
+                            ],
+                          ),
+                        ),
+
+
+
+
+                        Icon(Icons.copy_outlined, color: AppColor.colorGrey,)
+
+                      ],
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.all(AppSize.s10),
+                    margin: EdgeInsets.symmetric(vertical: AppSize.s8),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(AppSize.s10),
+                        color: AppColor.cardBlack
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(Icons.password, color: AppColor.cardStrokeWhite,),
+                        SizedBox(width: AppSize.s10,),
+                        Expanded(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(""),
+                              Text("Change Password", style: TextStyle(color: AppColor.cardStrokeWhite, fontSize: AppSize
+                                  .textMedium),),
+                              Text(""),
+
+                            ],
+                          ),
+                        ),
+
+
+
+
+                        Icon(Icons.arrow_forward_ios_sharp, color: AppColor.cardStrokeWhite,)
+
+                      ],
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.all(AppSize.s10),
+                    margin: EdgeInsets.symmetric(vertical: AppSize.s8),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(AppSize.s10),
+                        color: AppColor.cardBlack
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(Icons.history, color: AppColor.cardStrokeWhite,),
+                        SizedBox(width: AppSize.s10,),
+                        Expanded(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(""),
+                              Text("Review Recent Activity", style: TextStyle(color: AppColor.cardStrokeWhite, fontSize: AppSize
+                                  .textMedium),),
+                              const Text(""),
+
+                            ],
+                          ),
+                        ),
+
+
+
+
+                        Icon(Icons.arrow_forward_ios_sharp, color: AppColor.cardStrokeWhite,)
+
+                      ],
+                    ),
+                  ),
+                  const Spacer(),
+                  Container(
+                    padding: EdgeInsets.all(AppSize.s16),
+
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(AppSize.s10),
+                        color: AppColor.cardBlack,
+                      border: Border.all(
+                        color: AppColor.cardStrokeRed,
+                          width: 1.0,
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.close, color: AppColor.cardStrokeRed,),
+                        Text("Remove Account", style: TextStyle(color: AppColor.cardStrokeRed,),)
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           )
         ],

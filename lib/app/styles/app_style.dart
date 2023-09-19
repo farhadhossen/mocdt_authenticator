@@ -78,6 +78,7 @@ class AppColor {
 
   static Color get semiBlack80 => const Color(0xCC010101);
 
+  static Color get activeGreen => const Color(0xFF06B67C);
 
 
 

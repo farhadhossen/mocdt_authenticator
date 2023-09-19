@@ -1,6 +1,7 @@
 import 'package:authenticator/app/styles/app_style.dart';
 import 'package:authenticator/app/utils/app_assets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_switch/flutter_switch.dart';
 
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -120,12 +121,24 @@ class ProfileView extends GetView<HomeController> {
                   ),
                   SizedBox(width: AppSize.s6,),
                   Expanded(child: Text("Dark Mode", style: TextStyle(fontSize: AppSize.textSmall),)),
-                  Switch(
-                      value: controller.isNight.value, onChanged: (value){
-                    ThemeService().changeThemeMode();
-                    controller.isNight.value = value;
+                  // Switch(
+                  //     value: controller.isNight.value, onChanged: (value){
+                  //   ThemeService().changeThemeMode();
+                  //   controller.isNight.value = value;
+                  // }
+                  // ),
+
+              FlutterSwitch(
+                width: AppSize.s42+AppSize.s6,
+                value: controller.isNight.value,
+                borderRadius: 30.0,
+                activeColor: AppColor.activeGreen,
+                onToggle: (value) {
+                  ThemeService().changeThemeMode();
+                  controller.isNight.value = value;
                   }
-                  )
+              ),
+
                 ],
               ),
             ),
