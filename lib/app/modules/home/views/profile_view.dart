@@ -1,3 +1,4 @@
+import 'package:authenticator/app/routes/app_pages.dart';
 import 'package:authenticator/app/styles/app_style.dart';
 import 'package:authenticator/app/utils/app_assets.dart';
 import 'package:flutter/material.dart';
@@ -165,7 +166,11 @@ class ProfileView extends GetView<HomeController> {
                   ),
                   SizedBox(width: AppSize.s6,),
                   Expanded(child: Text("App Security", style: TextStyle(fontSize: AppSize.textSmall),)),
-                  Icon(Icons.play_arrow_rounded, color: AppColor.colorGrey,)
+                  InkWell(
+                    onTap: (){
+                      Get.toNamed(AppPages.APP_SECURITY);
+                    },
+                      child: Icon(Icons.play_arrow_rounded, color: AppColor.colorGrey,))
                 ],
               ),
             ),
@@ -193,7 +198,11 @@ class ProfileView extends GetView<HomeController> {
                   ),
                   SizedBox(width: AppSize.s6,),
                   Expanded(child: Text("Import/Export Tokens", style: TextStyle(fontSize: AppSize.textSmall),)),
-                  Icon(Icons.play_arrow_rounded, color: AppColor.colorGrey,)
+                  InkWell(
+                      onTap: (){
+                        Get.toNamed(AppPages.IMPORT_EXPORT);
+                      },
+                      child: Icon(Icons.play_arrow_rounded, color: AppColor.colorGrey,))
                 ],
               ),
             ),

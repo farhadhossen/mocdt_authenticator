@@ -12,6 +12,9 @@ abstract class Routes {
   static const ADD_ACCOUNT_SEC_KEY = _Paths.ADD_ACCOUNT_SEC_KEY;
   static const ADD_ACCOUNT_QR = _Paths.ADD_ACCOUNT_QR;
   static const TOKEN_DETAIL = _Paths.TOKEN_DETAIL;
+  static const SETTINGS = _Paths.SETTINGS;
+  static const IMPORT_EXPORT = _Paths.IMPORT_EXPORT;
+  static const APP_SECURITY = _Paths.APP_SECURITY;
 }
 
 abstract class _Paths {
@@ -25,4 +28,7 @@ abstract class _Paths {
   static const ADD_ACCOUNT_SEC_KEY = '/add-account-sec-key';
   static const ADD_ACCOUNT_QR = '/add-account-qr';
   static const TOKEN_DETAIL = '/token-detail';
+  static const SETTINGS = '/settings';
+  static const IMPORT_EXPORT = '/import-export-tokens';
+  static const APP_SECURITY = '/app-security';
 }
