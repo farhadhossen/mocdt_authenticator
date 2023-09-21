@@ -6,7 +6,6 @@ import 'package:flutter_switch/flutter_switch.dart';
 
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:gradient_circular_progress_indicator/gradient_circular_progress_indicator.dart';
 
 import '../../../data/services/theme_services.dart';
 import '../../../widgets/custom_app_bar.dart';

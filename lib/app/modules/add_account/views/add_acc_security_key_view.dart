@@ -34,7 +34,7 @@ class AddAccSecKyView extends GetView<AddAccountController> {
                 contentPadding: EdgeInsets.all(AppSize.s16),
                 hintText: 'Account Name',
                 // prefixIcon: Icon(Icons.search, color: AppColor.bottomNavTextDark,),
-                hintStyle: TextStyle(color: AppColor.bottomNavTextDark),
+                hintStyle: TextStyle(color: Get.theme.colorScheme.secondaryContainer),
                 filled: true,
                 fillColor: AppColor.cardBlack,
                 border: OutlineInputBorder(
@@ -70,7 +70,7 @@ class AddAccSecKyView extends GetView<AddAccountController> {
                 contentPadding: EdgeInsets.all(AppSize.s16),
                 hintText: 'Enter Key',
                 // prefixIcon: Icon(Icons.search, color: AppColor.bottomNavTextDark,),
-                hintStyle: TextStyle(color: AppColor.bottomNavTextDark),
+                hintStyle: TextStyle(color: Get.theme.colorScheme.secondaryContainer),
                 filled: true,
                 fillColor: AppColor.cardBlack,
                 border: OutlineInputBorder(

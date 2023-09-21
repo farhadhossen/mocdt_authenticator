@@ -82,8 +82,19 @@ class AppColor {
 
 
 
+  /// for theming
+  static Color get bgColorLight => const Color(0xFFE1E1E1);
+  static Color get bgColorDark => const Color(0xFF080808);
+
+  static Color get cardLight => const Color(0xFFF4F4F4);
+  static Color get cardDark => const Color(0xFF161616);
+
+  static Color get cardTextGreyLight => const Color(0xFF6A6A6B);
+  static Color get cardTextGreyDark => const Color(0xFFE1E5F1);
 
 
+  static Color get appBarStockLight => const Color(0xFFF4F4F4);
+  static Color get appBarStockDark => const Color(0xFF1E1E1E);
 
 
 

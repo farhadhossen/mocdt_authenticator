@@ -17,7 +17,7 @@ class NotificationView extends GetView<HomeController> {
     debugPrint("-------------------------");
     return Scaffold(
       // backgroundColor: Get.theme.colorScheme.background,
-      backgroundColor: context.theme.colorScheme.background,
+      backgroundColor: Get.theme.colorScheme.background,
       appBar: const CustomAppBar(title: "Authenticator",),
       // AppBar(
       //   backgroundColor: AppColor.primaryBlack,

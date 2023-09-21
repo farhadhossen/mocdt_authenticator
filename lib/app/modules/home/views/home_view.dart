@@ -38,10 +38,10 @@ class HomeView extends GetView<HomeController> {
                     decoration: InputDecoration(
                       contentPadding: EdgeInsets.all(AppSize.s2),
                       hintText: 'Search Accounts',
-                      prefixIcon: Icon(Icons.search, color: AppColor.bottomNavTextDark,),
-                      hintStyle: TextStyle(color: AppColor.bottomNavTextDark),
+                      prefixIcon: Icon(Icons.search, color: Get.theme.colorScheme.secondaryContainer,),
+                      hintStyle: TextStyle(color: Get.theme.colorScheme.secondaryContainer),
                       filled: true,
-                      fillColor: AppColor.cardBlack,
+                      fillColor: Get.theme.colorScheme.secondary,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                         borderSide: const BorderSide(
@@ -68,7 +68,7 @@ class HomeView extends GetView<HomeController> {
                           margin: EdgeInsets.symmetric(vertical: AppSize.s8),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(AppSize.s10),
-                            color: AppColor.cardBlack
+                            color: Get.theme.colorScheme.primaryContainer,
                           ),
                           child: Row(
                             children: [
@@ -76,7 +76,7 @@ class HomeView extends GetView<HomeController> {
                                 height: AppSize.s50,
                                 width: AppSize.s36,
                                 decoration: BoxDecoration(
-                                  color: AppColor.primaryBlack,
+                                  color: Get.theme.colorScheme.background.withOpacity(0.4),
                                   borderRadius: BorderRadius.circular(AppSize.s6)
                                 ),
                                 padding: EdgeInsets.symmetric(horizontal: AppSize.s6),
@@ -91,9 +91,11 @@ class HomeView extends GetView<HomeController> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text("Gmail", style: TextStyle(color: AppColor.homeCardTitleDark, fontSize: AppSize.textXSmall),),
-                                    Text("759 854", style: TextStyle(color: AppColor.homeCardTitleDark, fontSize: AppSize.textXLarge),),
-                                    Text("imfarhad01@gmail.com", style: TextStyle(color: AppColor.homeCardTitleDark, fontSize: AppSize.textXSmall),),
+                                    Text("Gmail", style: TextStyle(color: Get.theme.colorScheme.onPrimaryContainer.withOpacity(0.8),
+                                        fontSize:
+                                    AppSize.textXSmall),),
+                                    Text("759 854", style: TextStyle(color: Get.theme.colorScheme.onPrimaryContainer, fontSize: AppSize.textXLarge),),
+                                    Text("imfarhad01@gmail.com", style: TextStyle(color: Get.theme.colorScheme.onPrimaryContainer.withOpacity(0.8), fontSize: AppSize.textXSmall),),
 
                                   ],
                                 ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../styles/app_style.dart';
@@ -20,7 +21,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       centerTitle: true,
-      backgroundColor: AppColor.primaryBlack,
+      backgroundColor: context.theme.colorScheme.primaryContainer,
       elevation: 0,
       title: Text(title,
           style: GoogleFonts.poppins(textStyle: TextStyle(color: AppColor.cardStrokeWhite, fontWeight: FontWeight.w600),)),
@@ -28,7 +29,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         decoration: BoxDecoration(
             border: Border(
           bottom: BorderSide(
-            color: AppColor.appBarStock,
+            color: context.theme.colorScheme.outline,
             width: 1.0,
           ),
         )),

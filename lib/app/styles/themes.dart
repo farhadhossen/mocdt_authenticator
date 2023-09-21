@@ -6,8 +6,10 @@ class Themes {
       // brightness: Brightness.light,
       colorScheme: ColorScheme.dark(
         brightness: Brightness.light,
-        primary: Color(0xffF4F4F4),
-        background: Color(0xffE1E1E1),
+        background:AppColor.bgColorLight,
+        primaryContainer: AppColor.cardLight,
+        onPrimaryContainer: AppColor.cardTextGreyLight,
+        outline: AppColor.appBarStockLight
       )
   );
 
@@ -15,9 +17,17 @@ class Themes {
     // brightness: Brightness.dark,
     colorScheme: ColorScheme.dark(
         brightness: Brightness.dark,
-        primary: Color(0xff1E1E1E),
-        background: AppColor.primaryBlack,
-        secondary: Color(0xff1E1E1E),
+        background: AppColor.bgColorDark,
+        primaryContainer: AppColor.cardDark,
+        onPrimaryContainer: AppColor.cardTextGreyDark,
+        outline: AppColor.appBarStockDark,
+
+
+        primary: AppColor.primaryBlack,
+      secondary: AppColor.cardBlack,
+      secondaryContainer: AppColor.bottomNavTextDark
+
+
     )
   );
 }
