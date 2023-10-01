@@ -82,20 +82,123 @@ class AppColor {
 
 
 
-  /// for theming
-  static Color get bgColorLight => const Color(0xFFE1E1E1);
-  static Color get bgColorDark => const Color(0xFF080808);
+  // /// for theming
+  // static Color get bgColorLight => const Color(0xFFE1E1E1);
+  // static Color get bgColorDark => const Color(0xFF080808);
+  //
+  // static Color get cardLight => const Color(0xFFF4F4F4);
+  // static Color get cardDark => const Color(0xFF161616);
+  //
+  // static Color get cardTextGreyLight => const Color(0xFF6A6A6B);
+  // static Color get cardTextGreyDark => const Color(0xFFE1E5F1);
+  //
+  //
+  // static Color get appBarStockLight => const Color(0xFFF4F4F4);
+  // static Color get appBarStockDark => const Color(0xFF1E1E1E);
+  //
+  // // static Color get appBarTextLight => const Color(0xFF010101);
+  // // static Color get appBarTextDark => const Color(0xFFF3F2EE);
 
-  static Color get cardLight => const Color(0xFFF4F4F4);
-  static Color get cardDark => const Color(0xFF161616);
 
-  static Color get cardTextGreyLight => const Color(0xFF6A6A6B);
-  static Color get cardTextGreyDark => const Color(0xFFE1E5F1);
+  /// for theming2
+  //body
+  static Color get bgLight => const Color(0xFFE1E1E1);
+  static Color get bgDark => const Color(0xFF080808);
+
+  //appbar
+  static Color get appbarBgLight => const Color(0xFFF4F4F4);
+  static Color get appbarBgDark => const Color(0xFF080808);
+
+  static Color get appBarTextLight => const Color(0xFF010101);
+  static Color get appBarTextDark => const Color(0xFFF3F2EE);
+
+  static Color get appbarStkLight => const Color(0xFFF4F4F4);
+  static Color get appbarStkDark => const Color(0xFF1E1E1E);
 
 
-  static Color get appBarStockLight => const Color(0xFFF4F4F4);
-  static Color get appBarStockDark => const Color(0xFF1E1E1E);
+  //bottom bar
+  static Color get btmBarBgLight => const Color(0xFFF4F4F4);
+  static Color get btmBarBgDark => const Color(0xFF080808);
 
+  static Color get btmBarIcActvLight => const Color(0xFF010101);
+  static Color get btmBarIcActvDark => const Color(0xFFF3F2EE);
+
+
+  static Color get btmBarIcDeActvLight => const Color(0x996A6A6B);
+  static Color get btmBarIcDeActvDark => const Color(0xFF6B6B6B);
+
+  // home
+  // search
+  static Color get searchBgLight => const Color(0x0A010101);
+  static Color get searchBgDark => const Color(0xFF161616);
+
+
+  static Color get searchIcHntLight => const Color(0x80010101);
+  static Color get searchIcHntDark => const Color(0x66EBF2F9);
+
+  //home card
+
+  static Color get homeCrd1Light => const Color(0xFFF4F4F4);
+  static Color get homeCrd1Dark => const Color(0xFF161616);
+
+  static Color get homeCrd2Light => const Color(0x0d737373);
+  static Color get homeCrd2Dark => const Color(0x66080808);
+
+  static Color get homeCrdTxt1Light => const Color(0xFF6A6A6B);
+  static Color get homeCrdTxt1Dark => const Color(0xB3E1E5F1);
+
+  static Color get homeCrdTxt2Light => const Color(0xFF010101);
+  static Color get homeCrdTxt2Dark => const Color(0xFFFFFFFF);
+
+  static Color get homeCrdIcLight => const Color(0xFF287BFF);
+  static Color get homeCrdIcDark => const Color(0xFF6A6A6B);
+
+  //Notification
+  static Color get ntfnCrd1Light => const Color(0xFFF4F4F4);
+  static Color get ntfnCrd1Dark => const Color(0xFF010101);
+
+  static Color get ntfnCrd2Light => const Color(0xFFE1E1E1);
+  static Color get ntfnCrd2Dark => const Color(0xFF161616);
+
+  static Color get ntfnTxt1Light => const Color(0xFF6A6A6B);
+  static Color get ntfnTxt1Dark => const Color(0xCCF3F2EE);
+
+  static Color get ntfnTxt2Light => const Color(0xFF010101);
+  static Color get ntfnTxt2Dark => const Color(0xCCF3F2EE);
+
+  static Color get ntfnIcLight => const Color(0xFFD9D9D9);
+  static Color get ntfnIcDark => const Color(0xFFCACACA);
+
+  //Profile
+  static Color get prfCrd1Light => const Color(0xFF1C1C1C);
+  static Color get prfCrd1Dark => const Color(0xFFF3F2EE);
+
+  static Color get prfCrd2Light => const Color(0xFFF4F4F4);
+  static Color get prfCrd2Dark => const Color(0xFF1E1E1E);
+
+  static Color get prfCrd3Light => const Color(0xFFF4F4F4);
+  static Color get prfCrd3Dark => Colors.transparent;
+
+  static Color get prfCrdStk1Light => const Color(0xFF1C1C1C);
+  static Color get prfCrdStk1Dark => const Color(0xFFF3F2EE);
+
+  static Color get prfCrdStk2Light => const Color(0xFFF4F4F4);
+  static Color get prfCrdStk2Dark => const Color(0xFF1E1E1E);
+
+  static Color get prfIc1Light => const Color(0xFFF4F4F4);
+  static Color get prfIc1Dark => const Color(0xFF010101);
+
+  static Color get prfIc2Light => const Color(0xFF6A6A6B);
+  static Color get prfIc2Dark => const Color(0xFFF4F4F4);
+
+  static Color get prfTxt1Light => const Color(0xFFFFFFFF);
+  static Color get prfTxt1Dark => const Color(0xFF010101);
+
+  static Color get prfTxt2Light => const Color(0xFF6A6A6B);
+  static Color get prfTxt2Dark => const Color(0xB3FFFFFF);
+
+  static Color get prfTxt3Light => const Color(0xFF010101);
+  static Color get prfTxt3Dark => const Color(0xFFF3F2EE);
 
 
 }

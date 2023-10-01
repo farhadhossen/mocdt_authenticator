@@ -24,7 +24,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: context.theme.colorScheme.primaryContainer,
       elevation: 0,
       title: Text(title,
-          style: GoogleFonts.poppins(textStyle: TextStyle(color: AppColor.cardStrokeWhite, fontWeight: FontWeight.w600),)),
+          style: GoogleFonts.poppins(textStyle: TextStyle(color: context.theme.colorScheme.onSecondary, fontWeight: FontWeight.w600),)),
       flexibleSpace: Container(
         decoration: BoxDecoration(
             border: Border(

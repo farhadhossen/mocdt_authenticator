@@ -42,7 +42,7 @@ class ProfileView extends GetView<HomeController> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(width: double.infinity,),
+                  const SizedBox(width: double.infinity,),
                   Container(
                     padding: EdgeInsets.all(AppSize.s10),
                     width: double.infinity,
@@ -106,7 +106,8 @@ class ProfileView extends GetView<HomeController> {
               decoration: BoxDecoration(
                 // color: AppColor.whiteText,
                   borderRadius: BorderRadius.circular(AppSize.s10,),
-                  border: Border.all(color: AppColor.cardStrokeWhite.withOpacity(0.2), width: 0.8)
+                  border: Border.all(color: AppColor.cardStrokeWhite.withOpacity(0.2), width: 0.8),
+                  color: context.theme.colorScheme.outline
               ),
               child: Row(
                 children: [
