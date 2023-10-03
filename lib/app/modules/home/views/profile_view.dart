@@ -47,7 +47,7 @@ class ProfileView extends GetView<HomeController> {
                     padding: EdgeInsets.all(AppSize.s10),
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: AppColor.colorWhite,
+                      color: context.theme.colorScheme.error,
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(AppSize.s10),
                         topRight: Radius.circular(AppSize.s10),
@@ -55,14 +55,14 @@ class ProfileView extends GetView<HomeController> {
                     ),
                     child: Text("Authenticator Backup Key", style: GoogleFonts.inter(textStyle: TextStyle(
                       fontSize: AppSize.textSmall,
-                      color: AppColor.primaryAppColor
+                      color: context.theme.colorScheme.errorContainer,
                     )),),
                   ),
                   Container(
                     padding: EdgeInsets.all(AppSize.s10),
                     width: double.infinity,
                     decoration: BoxDecoration(
-                        color: AppColor.appBarStock,
+                        color: context.theme.colorScheme.onError,
                         borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(AppSize.s10),
                           bottomRight: Radius.circular(AppSize.s10),
@@ -72,7 +72,7 @@ class ProfileView extends GetView<HomeController> {
                       children: [
                         Text("Authenticator BaIt’s important to preserve your backup keys. You can get the tokens if you want to use these account further.", style: GoogleFonts.inter(textStyle: TextStyle(
                             fontSize: AppSize.textSmall,
-                            color: AppColor.cardStrokeWhite
+                            color: context.theme.colorScheme.onErrorContainer,
                         )),),
                         
                         SizedBox(height: AppSize.s20,),
@@ -82,11 +82,11 @@ class ProfileView extends GetView<HomeController> {
                           height: AppSize.s42,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(AppSize.s10),
-                            border: Border.all(color: AppColor.cardStrokeWhite)
+                            border: Border.all(color: context.theme.colorScheme.outlineVariant,)
                           ),
                           child: Center(
                             child: Text("Copy Backup Key", style: TextStyle(
-                              fontSize: AppSize.textSmall, color: AppColor.cardStrokeWhite
+                              fontSize: AppSize.textSmall, color: context.theme.colorScheme.outlineVariant,
                             ),),
                           ),
                         )
@@ -115,13 +115,13 @@ class ProfileView extends GetView<HomeController> {
                     height: AppSize.s36,
                     width: AppSize.s36,
                     decoration: BoxDecoration(
-                      color: AppColor.cardStrokeWhite,
+                      color: context.theme.colorScheme.onBackground,
                       borderRadius: BorderRadius.circular(AppSize.s6)
                     ),
-                    child: Icon(Icons.nightlight_round, color: AppColor.primaryBlack,),
+                    child: Icon(Icons.nightlight_round, color: context.theme.colorScheme.errorContainer,),
                   ),
-                  SizedBox(width: AppSize.s6,),
-                  Expanded(child: Text("Dark Mode", style: TextStyle(fontSize: AppSize.textSmall),)),
+                  SizedBox(width: AppSize.s10,),
+                  Expanded(child: Text("Dark Mode", style: TextStyle(fontSize: AppSize.textSmall, color: context.theme.colorScheme.onBackground,),)),
                   // Switch(
                   //     value: controller.isNight.value, onChanged: (value){
                   //   ThemeService().changeThemeMode();
@@ -151,7 +151,8 @@ class ProfileView extends GetView<HomeController> {
               decoration: BoxDecoration(
                 // color: AppColor.whiteText,
                   borderRadius: BorderRadius.circular(AppSize.s10,),
-                  border: Border.all(color: AppColor.cardStrokeWhite.withOpacity(0.2), width: 0.8)
+                  border: Border.all(color: AppColor.cardStrokeWhite.withOpacity(0.2), width: 0.8),
+                color: context.theme.colorScheme.outline
               ),
               child: Row(
                 children: [
@@ -159,13 +160,13 @@ class ProfileView extends GetView<HomeController> {
                     height: AppSize.s36,
                     width: AppSize.s36,
                     decoration: BoxDecoration(
-                      color: AppColor.cardStrokeWhite,
-                      borderRadius: BorderRadius.circular(AppSize.s6)
+                      color: context.theme.colorScheme.onBackground,
+                      borderRadius: BorderRadius.circular(AppSize.s6),
                     ),
-                    child: Icon(Icons.lock, color: AppColor.primaryBlack,),
+                    child: Icon(Icons.lock, color: context.theme.colorScheme.errorContainer,),
                   ),
-                  SizedBox(width: AppSize.s6,),
-                  Expanded(child: Text("App Security", style: TextStyle(fontSize: AppSize.textSmall),)),
+                  SizedBox(width: AppSize.s10,),
+                  Expanded(child: Text("App Security", style: TextStyle(fontSize: AppSize.textSmall, color: context.theme.colorScheme.onBackground,),)),
                   InkWell(
                     onTap: (){
                       Get.toNamed(AppPages.APP_SECURITY);
@@ -183,7 +184,8 @@ class ProfileView extends GetView<HomeController> {
               decoration: BoxDecoration(
                 // color: AppColor.whiteText,
                   borderRadius: BorderRadius.circular(AppSize.s10,),
-                  border: Border.all(color: AppColor.cardStrokeWhite.withOpacity(0.2), width: 0.8)
+                  border: Border.all(color: AppColor.cardStrokeWhite.withOpacity(0.2), width: 0.8),
+                color: context.theme.colorScheme.outline
               ),
               child: Row(
                 children: [
@@ -191,13 +193,13 @@ class ProfileView extends GetView<HomeController> {
                     height: AppSize.s36,
                     width: AppSize.s36,
                     decoration: BoxDecoration(
-                        color: AppColor.cardStrokeWhite,
+                        color: context.theme.colorScheme.onBackground,
                         borderRadius: BorderRadius.circular(AppSize.s6)
                     ),
-                    child: Icon(Icons.login_outlined, color: AppColor.primaryBlack,),
+                    child: Icon(Icons.login_outlined, color: context.theme.colorScheme.errorContainer,),
                   ),
-                  SizedBox(width: AppSize.s6,),
-                  Expanded(child: Text("Import/Export Tokens", style: TextStyle(fontSize: AppSize.textSmall),)),
+                  SizedBox(width: AppSize.s10,),
+                  Expanded(child: Text("Import/Export Tokens", style: TextStyle(fontSize: AppSize.textSmall,  color: context.theme.colorScheme.onBackground,),)),
                   InkWell(
                       onTap: (){
                         Get.toNamed(AppPages.IMPORT_EXPORT);
@@ -214,7 +216,8 @@ class ProfileView extends GetView<HomeController> {
               decoration: BoxDecoration(
                 // color: AppColor.whiteText,
                   borderRadius: BorderRadius.circular(AppSize.s10,),
-                  border: Border.all(color: AppColor.cardStrokeWhite.withOpacity(0.2), width: 0.8)
+                  border: Border.all(color: AppColor.cardStrokeWhite.withOpacity(0.2), width: 0.8),
+                color: context.theme.colorScheme.outline
               ),
               child: Row(
                 children: [
@@ -222,13 +225,14 @@ class ProfileView extends GetView<HomeController> {
                     height: AppSize.s36,
                     width: AppSize.s36,
                     decoration: BoxDecoration(
-                        color: AppColor.cardStrokeWhite,
+                        color: context.theme.colorScheme.onBackground,
                         borderRadius: BorderRadius.circular(AppSize.s6)
                     ),
-                    child: Icon(Icons.support_agent, color: AppColor.primaryBlack,),
+                    child: Icon(Icons.support_agent, color: context.theme.colorScheme.errorContainer,),
                   ),
-                  SizedBox(width: AppSize.s6,),
-                  Expanded(child: Text("Support", style: TextStyle(fontSize: AppSize.textSmall),)),
+                  SizedBox(width: AppSize.s10,),
+                  Expanded(child: Text("Support", style: TextStyle(fontSize: AppSize.textSmall, color: context.theme.colorScheme
+                      .onBackground,),)),
                   Icon(Icons.outbond, color: AppColor.colorGrey,)
                 ],
               ),
@@ -241,7 +245,8 @@ class ProfileView extends GetView<HomeController> {
               decoration: BoxDecoration(
                 // color: AppColor.whiteText,
                   borderRadius: BorderRadius.circular(AppSize.s10,),
-                  border: Border.all(color: AppColor.cardStrokeWhite.withOpacity(0.2), width: 0.8)
+                  border: Border.all(color: AppColor.cardStrokeWhite.withOpacity(0.2), width: 0.8),
+                color: context.theme.colorScheme.outline
               ),
               child: Row(
                 children: [
@@ -249,13 +254,13 @@ class ProfileView extends GetView<HomeController> {
                     height: AppSize.s36,
                     width: AppSize.s36,
                     decoration: BoxDecoration(
-                        color: AppColor.cardStrokeWhite,
+                        color: context.theme.colorScheme.onBackground,
                         borderRadius: BorderRadius.circular(AppSize.s6)
                     ),
-                    child: Icon(Icons.info, color: AppColor.primaryBlack,),
+                    child: Icon(Icons.info, color: context.theme.colorScheme.errorContainer,),
                   ),
-                  SizedBox(width: AppSize.s6,),
-                  Expanded(child: Text("About", style: TextStyle(fontSize: AppSize.textSmall),)),
+                  SizedBox(width: AppSize.s10,),
+                  Expanded(child: Text("About", style: TextStyle(fontSize: AppSize.textSmall, color: context.theme.colorScheme.onBackground,),)),
                   Icon(Icons.outbond, color: AppColor.colorGrey,)
                 ],
               ),

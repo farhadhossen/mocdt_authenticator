@@ -12,6 +12,7 @@ import '../controllers/home_controller.dart';
 
 class BaseView extends GetView<HomeController> {
   const BaseView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -22,35 +23,45 @@ class BaseView extends GetView<HomeController> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const Text("Do you want to exit from the app?", textAlign: TextAlign.center,),
-                SizedBox(height: AppSize.s16,),
+                const Text(
+                  "Do you want to exit from the app?",
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(
+                  height: AppSize.s16,
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     ElevatedButton(
-                      style: ElevatedButton.styleFrom(backgroundColor: AppColor.accentColor,
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: AppColor.accentColor,
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSize.s20))),
-                      onPressed: (){
+                      onPressed: () {
                         Get.back();
-                      }, child: const Text("No"),),
+                      },
+                      child: const Text("No"),
+                    ),
                     ElevatedButton(
-                      style: ElevatedButton.styleFrom(backgroundColor: AppColor.colorWhite,
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: AppColor.colorWhite,
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSize.s20))),
-                      onPressed: (){
+                      onPressed: () {
                         SystemNavigator.pop();
-                      }, child: const Text("Yes"),),
+                      },
+                      child: const Text("Yes"),
+                    ),
                   ],
                 )
               ],
-            )
-        );
+            ));
         return true;
       },
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         body: Obx(
-              () => Column(
+          () => Column(
             children: [
               Visibility(visible: false, child: Text("${controller.currentTab.value}")),
               Expanded(
@@ -62,110 +73,131 @@ class BaseView extends GetView<HomeController> {
             ],
           ),
         ),
-        bottomNavigationBar:
-        BottomAppBar(
+        bottomNavigationBar: BottomAppBar(
           // color: Colors.yellow[100],
-            shape: const CircularNotchedRectangle(),
-            child: Obx(
-                    ()=>SizedBox(
-                  height: AppSize.s64,
-                  child: Stack(
-                    children: [
-
-                      Container(
-                        height: double.infinity,
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                            border: Border(
-                              top: BorderSide( //                   <--- right side
-                                color: Colors.grey.withOpacity(0.5),
-                                width: 1.0,
+          shape: const CircularNotchedRectangle(),
+          child: Obx(() => SizedBox(
+                height: AppSize.s64,
+                child: Stack(
+                  children: [
+                    Container(
+                      height: double.infinity,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                          border: Border(
+                            top: BorderSide(
+                              //                   <--- right side
+                              color: Colors.grey.withOpacity(0.5),
+                              width: 1.0,
+                            ),
+                          ),
+                          color: context.theme.colorScheme.secondary),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        InkWell(
+                          onTap: () {
+                            controller.onItemTapped(0);
+                          },
+                          child: Column(
+                            children: [
+                              Container(
+                                  padding: EdgeInsets.only(top: AppSize.s4),
+                                  decoration: BoxDecoration(
+                                      border: Border(
+                                    top: BorderSide(
+                                      //
+                                      color: controller.currentTab.value == 0 ? context.theme.colorScheme.onSecondary : Colors.transparent,
+                                      width: 3.0,
+                                    ),
+                                  )),
+                                  child: Icon(
+                                    Icons.security,
+                                    color: controller.currentTab.value == 0 ? context.theme.colorScheme.onSecondary : context.theme.colorScheme.scrim,
+                                  )),
+                              SizedBox(
+                                height: AppSize.s6,
                               ),
-                            ),
-                          color: AppColor.primaryBlack
+                              Text(
+                                "Tokens",
+                                style: TextStyle(
+                                  color: controller.currentTab.value == 0 ? context.theme.colorScheme.onSecondary : context.theme.colorScheme.scrim,
+                                ),
+                              )
+                            ],
+                          ),
                         ),
-                      ),
-
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-
-                          InkWell(
-                            onTap: (){
-                              controller.onItemTapped(0);
-                            },
-                            child: Column(
-                              children: [
-                                Container(
-                                    padding: EdgeInsets.only(top: AppSize.s4),
-                                    decoration: BoxDecoration(
-                                        border: Border(
-                                          top: BorderSide( //
-                                            color: controller.currentTab.value == 0? AppColor.whiteText:Colors.transparent,
-                                            width: 3.0,
-                                          ),
-                                        )
+                        InkWell(
+                          onTap: () {
+                            controller.onItemTapped(1);
+                          },
+                          child: Column(
+                            children: [
+                              Container(
+                                  padding: EdgeInsets.only(top: AppSize.s4),
+                                  decoration: BoxDecoration(
+                                      border: Border(
+                                    top: BorderSide(
+                                      //
+                                      color: controller.currentTab.value == 1 ? context.theme.colorScheme.onSecondary : Colors.transparent,
+                                      width: 3.0,
                                     ),
-                                    child: Icon(Icons.security, color: controller.currentTab.value == 0? AppColor.whiteText:AppColor.colorGrey,)),
-                                SizedBox(height: AppSize.s6,),
-                                Text("Tokens", style: TextStyle(color: controller.currentTab.value == 0? AppColor.whiteText:AppColor.colorGrey,),)
-                              ],
-                            ),
+                                  )),
+                                  child: Icon(
+                                    Icons.notifications,
+                                    color: controller.currentTab.value == 1 ? context.theme.colorScheme.onSecondary : context.theme.colorScheme.scrim,
+                                  )),
+                              SizedBox(
+                                height: AppSize.s6,
+                              ),
+                              Text(
+                                "Notification",
+                                style: TextStyle(
+                                  color: controller.currentTab.value == 1 ? context.theme.colorScheme.onSecondary : context.theme.colorScheme.scrim,
+                                ),
+                              )
+                            ],
                           ),
-
-
-                          InkWell(
-                            onTap: (){controller.onItemTapped(1);},
-                            child: Column(
-                              children: [
-                                Container(
-                                    padding: EdgeInsets.only(top: AppSize.s4),
-                                    decoration: BoxDecoration(
-                                        border: Border(
-                                          top: BorderSide( //
-                                            color: controller.currentTab.value == 1? AppColor.whiteText:Colors.transparent,
-                                            width: 3.0,
-                                          ),
-                                        )
+                        ),
+                        InkWell(
+                          onTap: () {
+                            controller.onItemTapped(2);
+                          },
+                          child: Column(
+                            children: [
+                              Container(
+                                  padding: EdgeInsets.only(top: AppSize.s4),
+                                  decoration: BoxDecoration(
+                                      border: Border(
+                                    top: BorderSide(
+                                      //
+                                      color: controller.currentTab.value == 2 ? context.theme.colorScheme.onSecondary : Colors.transparent,
+                                      width: 3.0,
                                     ),
-                                    child: Icon(Icons.notifications, color: controller.currentTab.value == 1? AppColor.whiteText:AppColor.colorGrey,)),
-                                SizedBox(height: AppSize.s6,),
-                                Text("Notification", style: TextStyle(color: controller.currentTab.value == 1? AppColor.whiteText:AppColor.colorGrey,),)
-                              ],
-                            ),
+                                  )),
+                                  child: Icon(
+                                    Icons.settings,
+                                    color: controller.currentTab.value == 2 ? context.theme.colorScheme.onSecondary : context.theme.colorScheme.scrim,
+                                  )),
+                              SizedBox(
+                                height: AppSize.s6,
+                              ),
+                              Text(
+                                "Profile",
+                                style: TextStyle(
+                                  color: controller.currentTab.value == 2 ? context.theme.colorScheme.onSecondary : context.theme.colorScheme.scrim,
+                                ),
+                              )
+                            ],
                           ),
-
-
-                          InkWell(
-                            onTap: (){controller.onItemTapped(2);},
-                            child: Column(
-                              children: [
-                                Container(
-                                    padding: EdgeInsets.only(top: AppSize.s4),
-                                    decoration: BoxDecoration(
-                                        border: Border(
-                                          top: BorderSide( //
-                                            color: controller.currentTab.value == 2? AppColor.whiteText:Colors.transparent,
-                                            width: 3.0,
-                                          ),
-                                        )
-                                    ),
-                                    child: Icon(Icons.settings, color: controller.currentTab.value == 2? AppColor.whiteText:AppColor.colorGrey,)),
-                                SizedBox(height: AppSize.s6,),
-                                Text("Profile", style: TextStyle(color: controller.currentTab.value == 2? AppColor.whiteText:AppColor.colorGrey,),)
-                              ],
-                            ),
-                          ),
-
-
-                        ],
-                      ),
-                    ],
-                  ),
-                )
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
-            ),
-
+              )),
+        ),
       ),
     );
   }

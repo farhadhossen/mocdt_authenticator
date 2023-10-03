@@ -31,13 +31,16 @@ class NotificationView extends GetView<HomeController> {
           // SizedBox(height: AppSize.s16,),
           Expanded(
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: AppSize.s20),
+              //padding: EdgeInsets.symmetric(horizontal: AppSize.s20),
               child: ListView.builder(
                 physics: const BouncingScrollPhysics(),
                 itemCount: 10,
                   itemBuilder: (ctx, index){
                 return Container(
                   padding: EdgeInsets.all(AppSize.s10),
+                  decoration: BoxDecoration(
+                    color: Get.theme.colorScheme.tertiary
+                  ),
                   child: Row(
                     children: [
                       SizedBox(
@@ -55,12 +58,12 @@ class NotificationView extends GetView<HomeController> {
 
                             Row(
                               children: [
-                                Text("Facebook", style: GoogleFonts.inter(textStyle: TextStyle(color: AppColor.cardStrokeWhite,
+                                Text("Facebook", style: GoogleFonts.inter(textStyle: TextStyle(color: Get.theme.colorScheme.onTertiaryContainer,
                                 fontSize: AppSize.textXSmall)),),
                                 SizedBox(width: AppSize.s6,),
-                                Text("•", style: GoogleFonts.inter(textStyle: TextStyle(color: AppColor.cardStrokeWhite)),),
+                                Text("•", style: GoogleFonts.inter(textStyle: TextStyle(color: Get.theme.colorScheme.onTertiaryContainer)),),
                                 SizedBox(width: AppSize.s6,),
-                                Text("12:15 AM", style: GoogleFonts.inter(textStyle: TextStyle(color: AppColor.cardStrokeWhite,
+                                Text("12:15 AM", style: GoogleFonts.inter(textStyle: TextStyle(color: Get.theme.colorScheme.onTertiaryContainer,
                                     fontSize: AppSize.textXXSmall)),),
 
                               ],
@@ -68,13 +71,14 @@ class NotificationView extends GetView<HomeController> {
 
                             SizedBox(height: AppSize.s6,),
 
-                            Text("Login Alert: Your “infectedx” account has a new login session", style: GoogleFonts.inter(textStyle: TextStyle(color: AppColor.cardStrokeWhite,
+                            Text("Login Alert: Your “infectedx” account has a new login session", style: GoogleFonts.inter(textStyle: TextStyle(
+                                color: Get.theme.colorScheme.surfaceVariant,
                                 fontSize: AppSize.textXSmall)),),
 
                           ],
                         ),
                       ),
-                      Icon(Icons.more_vert, size: AppSize.s26, color: AppColor.cardStrokeWhite,)
+                      Icon(Icons.more_vert, size: AppSize.s26, color: Get.theme.colorScheme.onSurfaceVariant,)
                       
                     ],
                   ),

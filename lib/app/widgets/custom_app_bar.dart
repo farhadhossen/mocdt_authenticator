@@ -21,15 +21,15 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       centerTitle: true,
-      backgroundColor: context.theme.colorScheme.primaryContainer,
+      backgroundColor: context.theme.colorScheme.primary,
       elevation: 0,
       title: Text(title,
-          style: GoogleFonts.poppins(textStyle: TextStyle(color: context.theme.colorScheme.onSecondary, fontWeight: FontWeight.w600),)),
+          style: GoogleFonts.poppins(textStyle: TextStyle(color: context.theme.colorScheme.onPrimary, fontWeight: FontWeight.w600),)),
       flexibleSpace: Container(
         decoration: BoxDecoration(
             border: Border(
           bottom: BorderSide(
-            color: context.theme.colorScheme.outline,
+            color: context.theme.colorScheme.surfaceTint,
             width: 1.0,
           ),
         )),
