@@ -2,6 +2,7 @@ import 'package:authenticator/app/styles/app_style.dart';
 import 'package:authenticator/app/utils/app_assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/svg.dart';
 
 import 'package:get/get.dart';
 import 'package:gradient_circular_progress_indicator/gradient_circular_progress_indicator.dart';
@@ -9,6 +10,7 @@ import 'package:gradient_circular_progress_indicator/gradient_circular_progress_
 import '../../../data/services/theme_services.dart';
 import '../../../widgets/custom_app_bar.dart';
 import '../controllers/home_controller.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BaseView extends GetView<HomeController> {
   const BaseView({Key? key}) : super(key: key);
@@ -112,10 +114,21 @@ class BaseView extends GetView<HomeController> {
                                       width: 3.0,
                                     ),
                                   )),
-                                  child: Icon(
-                                    Icons.security,
-                                    color: controller.currentTab.value == 0 ? context.theme.colorScheme.onSecondary : context.theme.colorScheme.scrim,
-                                  )),
+                                  child:
+
+                                  SvgPicture.asset(
+                                      "assets/svgs/token_ic.svg",
+                                      colorFilter: ColorFilter.mode(controller.currentTab.value == 0 ? context.theme.colorScheme.onSecondary : context.theme.colorScheme.scrim, BlendMode.srcIn),
+                                      fit: BoxFit.contain,
+                                      height: AppSize.s32,
+                                      semanticsLabel: 'A red up arrow'
+                                  )
+
+                                  // Icon(
+                                  //   Icons.security,
+                                  //   color: controller.currentTab.value == 0 ? context.theme.colorScheme.onSecondary : context.theme.colorScheme.scrim,
+                                  // ),
+                              ),
                               SizedBox(
                                 height: AppSize.s6,
                               ),
@@ -144,10 +157,26 @@ class BaseView extends GetView<HomeController> {
                                       width: 3.0,
                                     ),
                                   )),
-                                  child: Icon(
-                                    Icons.notifications,
-                                    color: controller.currentTab.value == 1 ? context.theme.colorScheme.onSecondary : context.theme.colorScheme.scrim,
-                                  )),
+                                  child:
+
+                                  SvgPicture.asset(
+                                      "assets/svgs/notification_ic.svg",
+                                      // theme: SvgTheme(
+                                      //   currentColor: controller.currentTab.value == 1 ? context.theme.colorScheme
+                                      //       .onSecondary : context.theme.colorScheme.scrim
+                                      // ),
+                                      colorFilter: ColorFilter.mode(controller.currentTab.value == 1 ? context.theme.colorScheme
+                                          .onSecondary : context.theme.colorScheme.scrim, BlendMode.dstIn),
+                                      fit: BoxFit.contain,
+                                      height: AppSize.s32,
+                                      semanticsLabel: 'A red up arrow'
+                                  )
+
+                                  // Icon(
+                                  //   Icons.notifications,
+                                  //   color: controller.currentTab.value == 1 ? context.theme.colorScheme.onSecondary : context.theme.colorScheme.scrim,
+                                  // ),
+                              ),
                               SizedBox(
                                 height: AppSize.s6,
                               ),
@@ -176,10 +205,27 @@ class BaseView extends GetView<HomeController> {
                                       width: 3.0,
                                     ),
                                   )),
-                                  child: Icon(
-                                    Icons.settings,
-                                    color: controller.currentTab.value == 2 ? context.theme.colorScheme.onSecondary : context.theme.colorScheme.scrim,
-                                  )),
+                                  child:
+
+                                  SvgPicture.asset(
+                                      "assets/svgs/profile_ic.svg",
+                                      colorFilter: ColorFilter.mode(controller.currentTab.value == 2 ? context.theme.colorScheme
+                                          .onSecondary : context.theme.colorScheme.scrim, BlendMode.srcIn),
+                                      fit: BoxFit.contain,
+                                      height: AppSize.s32,
+                                      semanticsLabel: 'A red up arrow'
+                                  )
+
+                                  // FaIcon(FontAwesomeIcons.gear, color: controller.currentTab.value == 2 ? context.theme
+                                  //     .colorScheme.onSecondary : context.theme.colorScheme.scrim,)
+
+
+
+                                  // Icon(
+                                  //   Icons.settings,
+                                  //   color: controller.currentTab.value == 2 ? context.theme.colorScheme.onSecondary : context.theme.colorScheme.scrim,
+                                  // ),
+                              ),
                               SizedBox(
                                 height: AppSize.s6,
                               ),
