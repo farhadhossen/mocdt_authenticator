@@ -19,13 +19,15 @@ class ImportExportView extends GetView<SettingsController> {
         height: Get.height,
         width: Get.width,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
               padding: EdgeInsets.all(AppSize.s16),
               // height: AppSize.s42+AppSize.s6,
               width: double.infinity,
               decoration: BoxDecoration(
-                color: AppColor.appBarStock,
+                color: Get.theme.colorScheme.shadow,
                   borderRadius: BorderRadius.circular(AppSize.s8)
               ),
               child: Row(
@@ -36,7 +38,7 @@ class ImportExportView extends GetView<SettingsController> {
                   Container(
                     padding: EdgeInsets.all(AppSize.s6),
                     decoration: BoxDecoration(
-                        color: AppColor.appBarStock,
+                        color: Get.theme.colorScheme.onTertiary,
                       border: Border.all(color: AppColor.cardStrokeWhite),
                       borderRadius: BorderRadius.circular(AppSize.s4)
                     ),
@@ -48,7 +50,7 @@ class ImportExportView extends GetView<SettingsController> {
 
             SizedBox(height: AppSize.s10,),
             Text("Import token files to add your accounts which was linked to another third party authenticator app previously. ",
-            style: TextStyle(color: AppColor.descripTextDark, fontSize: AppSize.textXSmall),),
+            style: TextStyle(color: Get.theme.colorScheme.onErrorContainer, fontSize: AppSize.textXSmall),),
             SizedBox(height: AppSize.s26,),
 
             Container(
@@ -56,7 +58,7 @@ class ImportExportView extends GetView<SettingsController> {
               // height: AppSize.s42+AppSize.s6,
               width: double.infinity,
               decoration: BoxDecoration(
-                  color: AppColor.appBarStock,
+                  color: Get.theme.colorScheme.shadow,
                   borderRadius: BorderRadius.circular(AppSize.s8)
               ),
               child: Row(
@@ -67,11 +69,11 @@ class ImportExportView extends GetView<SettingsController> {
                   Container(
                     padding: EdgeInsets.all(AppSize.s6),
                     decoration: BoxDecoration(
-                        color: AppColor.buttonWhite,
+                        color: Get.theme.colorScheme.onPrimary,
                         border: Border.all(color: AppColor.cardStrokeWhite),
                         borderRadius: BorderRadius.circular(AppSize.s4)
                     ),
-                    child: Text("Browse File", style: TextStyle(color: AppColor.semiBlack80),),
+                    child: Text("Browse File", style: TextStyle(color: Get.theme.colorScheme.tertiary,),),
                   )
                 ],
               ),
@@ -79,7 +81,7 @@ class ImportExportView extends GetView<SettingsController> {
 
             SizedBox(height: AppSize.s10,),
             Text("Export existing accounts authenticator information as token.",
-              style: TextStyle(color: AppColor.descripTextDark, fontSize: AppSize.textXSmall),),
+              style: TextStyle(color: Get.theme.colorScheme.onErrorContainer, fontSize: AppSize.textXSmall), textAlign: TextAlign.left,),
 
           ],
         ),

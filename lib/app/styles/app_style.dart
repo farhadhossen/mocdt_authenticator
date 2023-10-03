@@ -200,6 +200,10 @@ class AppColor {
   static Color get prfTxt3Light => const Color(0xFF010101);
   static Color get prfTxt3Dark => const Color(0xFFF3F2EE);
 
+  //import export card
+  static Color get imExCrdLight => const Color(0xFFF4F4F4);
+  static Color get imExCrdDark => const Color(0xFF1C1C1C);
+
 
 }
 

@@ -46,6 +46,8 @@ class Themes {
     inversePrimary: AppColor.prfIc1Light,
     inverseSurface: AppColor.prfIc2Light,
     onBackground: AppColor.prfTxt3Light,
+
+      shadow: AppColor.imExCrdLight
   ));
 
   final darkTheme = ThemeData(
@@ -92,5 +94,8 @@ class Themes {
         inversePrimary: AppColor.prfIc1Dark,
         inverseSurface: AppColor.prfIc2Dark,
         onBackground: AppColor.prfTxt3Dark,
-  ));
+
+          shadow: AppColor.imExCrdDark
+
+      ));
 }

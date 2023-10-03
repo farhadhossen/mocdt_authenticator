@@ -28,7 +28,7 @@ class AppSecurityView extends GetView<SettingsController> {
               padding: EdgeInsets.all(AppSize.s8),
               margin: EdgeInsets.all(AppSize.s4),
               decoration: BoxDecoration(
-                // color: AppColor.whiteText,
+                color: Get.theme.colorScheme.outline,
                   borderRadius: BorderRadius.circular(AppSize.s10,),
                   border: Border.all(color: AppColor.cardStrokeWhite.withOpacity(0.2), width: 0.8)
               ),
@@ -63,7 +63,7 @@ class AppSecurityView extends GetView<SettingsController> {
               padding: EdgeInsets.all(AppSize.s8),
               margin: EdgeInsets.all(AppSize.s4),
               decoration: BoxDecoration(
-                // color: AppColor.whiteText,
+                  color: Get.theme.colorScheme.outline,
                   borderRadius: BorderRadius.circular(AppSize.s10,),
                   border: Border.all(color: AppColor.cardStrokeWhite.withOpacity(0.2), width: 0.8)
               ),
@@ -97,7 +97,7 @@ class AppSecurityView extends GetView<SettingsController> {
 
             SizedBox(height: AppSize.s10,),
             Text("Add security to open your app prompt. You can add one option for the security of your app.",
-              style: TextStyle(color: AppColor.descripTextDark, fontSize: AppSize.textXSmall),),
+              style: TextStyle(color: Get.theme.colorScheme.onErrorContainer, fontSize: AppSize.textXSmall),),
 
           ],
         ),
