@@ -35,11 +35,11 @@ class TokenDetailsView extends GetView<HomeController> {
                 // borderRadius: BorderRadius.circular(AppSize.s10),
                   border: Border(
                     bottom: BorderSide(
-                      color: AppColor.appBarStock,
+                      color: Get.theme.colorScheme.onError,
                       width: 1.0,
                     ),
                   ),
-                // color: AppColor.cardBlack
+                color:  Get.theme.colorScheme.secondary.withOpacity(0.7),
             ),
             child: Row(
               children: [
@@ -47,7 +47,7 @@ class TokenDetailsView extends GetView<HomeController> {
                   height: AppSize.s56,
                   width: AppSize.s56,
                   decoration: BoxDecoration(
-                      color: AppColor.colorBlack,
+                      color: Get.theme.colorScheme.secondaryContainer,
                       borderRadius: BorderRadius.circular(AppSize.s6)
                   ),
                   padding: EdgeInsets.symmetric(horizontal: AppSize.s10),
@@ -62,8 +62,8 @@ class TokenDetailsView extends GetView<HomeController> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("Gmail", style: TextStyle(color: AppColor.cardStrokeWhite, fontSize: AppSize.textXMedium),),
-                      Text("imfarhad01@gmail.com", style: TextStyle(color: AppColor.cardStrokeWhite, fontSize: AppSize.textMedium),),
+                      Text("Gmail", style: TextStyle(color: Get.theme.colorScheme.inverseSurface, fontSize: AppSize.textXMedium),),
+                      Text("imfarhad01@gmail.com", style: TextStyle(color: Get.theme.colorScheme.onBackground, fontSize: AppSize.textMedium),),
 
                     ],
                   ),
@@ -85,7 +85,7 @@ class TokenDetailsView extends GetView<HomeController> {
                     margin: EdgeInsets.symmetric(vertical: AppSize.s8),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(AppSize.s10),
-                        color: AppColor.cardBlack
+                        color: Get.theme.colorScheme.surface
                     ),
                     child: Row(
                       children: [
@@ -112,9 +112,9 @@ class TokenDetailsView extends GetView<HomeController> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text("One Time Passcode", style: TextStyle(color: AppColor.homeCardTitleDark, fontSize: AppSize
+                              Text("One Time Passcode", style: TextStyle(color: AppColor.homeCrdTxt1Light, fontSize: AppSize
                                   .textXSmall),),
-                              Text("759 854", style: TextStyle(color: AppColor.homeCardTitleDark, fontSize: AppSize.textXLarge),),
+                              Text("759 854", style: TextStyle(color: Get.theme.colorScheme.onSecondary, fontSize: AppSize.textXLarge),),
 
                             ],
                           ),
@@ -123,7 +123,7 @@ class TokenDetailsView extends GetView<HomeController> {
 
 
 
-                        Icon(Icons.copy_outlined, color: AppColor.colorGrey,)
+                        Icon(Icons.copy_outlined, color: AppColor.homeCrdTxt1Light,)
 
                       ],
                     ),
@@ -133,11 +133,11 @@ class TokenDetailsView extends GetView<HomeController> {
                     margin: EdgeInsets.symmetric(vertical: AppSize.s8),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(AppSize.s10),
-                        color: AppColor.cardBlack
+                        color: Get.theme.colorScheme.surface
                     ),
                     child: Row(
                       children: [
-                        Icon(Icons.password, color: AppColor.cardStrokeWhite,),
+                        Icon(Icons.password, color: Get.theme.colorScheme.onSecondary,),
                         SizedBox(width: AppSize.s10,),
                         Expanded(
                           child: Column(
@@ -145,7 +145,7 @@ class TokenDetailsView extends GetView<HomeController> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(""),
-                              Text("Change Password", style: TextStyle(color: AppColor.cardStrokeWhite, fontSize: AppSize
+                              Text("Change Password", style: TextStyle(color: Get.theme.colorScheme.onSecondary, fontSize: AppSize
                                   .textMedium),),
                               Text(""),
 
@@ -156,7 +156,7 @@ class TokenDetailsView extends GetView<HomeController> {
 
 
 
-                        Icon(Icons.arrow_forward_ios_sharp, color: AppColor.cardStrokeWhite,)
+                        Icon(Icons.arrow_forward_ios_sharp, color: Get.theme.colorScheme.onSecondary,)
 
                       ],
                     ),
@@ -166,11 +166,11 @@ class TokenDetailsView extends GetView<HomeController> {
                     margin: EdgeInsets.symmetric(vertical: AppSize.s8),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(AppSize.s10),
-                        color: AppColor.cardBlack
+                        color: Get.theme.colorScheme.surface
                     ),
                     child: Row(
                       children: [
-                        Icon(Icons.history, color: AppColor.cardStrokeWhite,),
+                        Icon(Icons.history, color: Get.theme.colorScheme.onSecondary,),
                         SizedBox(width: AppSize.s10,),
                         Expanded(
                           child: Column(
@@ -178,7 +178,7 @@ class TokenDetailsView extends GetView<HomeController> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               const Text(""),
-                              Text("Review Recent Activity", style: TextStyle(color: AppColor.cardStrokeWhite, fontSize: AppSize
+                              Text("Review Recent Activity", style: TextStyle(color: Get.theme.colorScheme.onSecondary, fontSize: AppSize
                                   .textMedium),),
                               const Text(""),
 
@@ -189,7 +189,7 @@ class TokenDetailsView extends GetView<HomeController> {
 
 
 
-                        Icon(Icons.arrow_forward_ios_sharp, color: AppColor.cardStrokeWhite,)
+                        Icon(Icons.arrow_forward_ios_sharp, color: Get.theme.colorScheme.onSecondary,)
 
                       ],
                     ),
@@ -200,7 +200,7 @@ class TokenDetailsView extends GetView<HomeController> {
 
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(AppSize.s10),
-                        color: AppColor.cardBlack,
+                        color: Get.theme.colorScheme.surface,
                       border: Border.all(
                         color: AppColor.cardStrokeRed,
                           width: 1.0,
